@@ -5,7 +5,7 @@ const app = express()
 const port = 4000;
 
 // Global use of custom middleware
-app.use(morgan('combined'))
+app.use(morgan('tiny'))
 
 // Route handlers
 app.get('/', (req, res) => {
@@ -16,10 +16,12 @@ app.get('/', (req, res) => {
 
 app.get('/dashboard', (req, res) => {
     console.log("Hello from dashboard route")
+    res.send("Response from dashboard")
 })
 
 app.get('/special',  (req, res) => {
     console.log("Hello from special route")
+    res.send("Response from special")
 })
 
 
